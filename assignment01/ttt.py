@@ -78,29 +78,29 @@ class TicTacToe():
 
         # check horizontal
         for r in self.board:
-            if np.all((r == 1)) and x_won == False:
+            if np.all((r == 1)):
                 x_won = True
-            elif np.all((r == 2)) and o_won == False:
+            elif np.all((r == 2)):
                 o_won = True
 
         # check vertical
         for c in self.board.T: # transposed
-            if np.all((c == 1)) and x_won == False:
+            if np.all((c == 1)):
                 x_won = True
-            elif np.all((c == 2)) and o_won == False:
+            elif np.all((c == 2)):
                 o_won = True
 
         # check diag (thanks numpy)
         # TL -> BR
-        if np.all((np.diag(self.board) == 1)) and x_won == False:
+        if np.all((np.diag(self.board) == 1)):
             x_won = True
-        elif np.all((np.diag(self.board) == 2)) and o_won == False:
+        elif np.all((np.diag(self.board) == 2)):
             o_won = True
 
         # TR -> BL
-        if np.all((np.diag(np.fliplr(self.board)) == 1)) and x_won == False:
+        if np.all((np.diag(np.fliplr(self.board)) == 1)):
             x_won = True
-        elif np.all((np.diag(np.fliplr(self.board)) == 2)) and o_won == False:
+        elif np.all((np.diag(np.fliplr(self.board)) == 2)):
             o_won = True
 
         if x_won:
