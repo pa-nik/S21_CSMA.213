@@ -1,3 +1,9 @@
+# Example from the Artificial Intelligence with Python repository:
+# https://raw.githubusercontent.com/PacktPublishing/Artificial-Intelligence-with-Python/master/Chapter%2002/code/label_encoder.py
+# note you will need to have numpy (installed in class) and sklearn libraries to run this:
+# python -m pip install numpy
+# python -m pip install sklearn
+
 import numpy as np
 from sklearn import preprocessing
 
