@@ -26,16 +26,40 @@ class TicTacToe():
         self.print_board()
 
         print("X" if self.x_turn else "O","'s turn")
-        selected_row = int(input("Pick a row [1-3]: "))-1
-        selected_column = int(input("Pick a column [1-3]: "))-1
+        selected_slot = input("Pick a slot [0-8]: ")
 
-        if selected_row > 2 or selected_column > 2 or selected_row < 0 or selected_column < 0:
+        if selected_slot is "":
+            self.turn()
+            return
+        else: selected_slot = int(selected_slot)
+
+        if selected_slot < 0 or selected_slot > 8:
             print("\n[!] Invalid spot! Please choose again.")
             self.turn()
             return
+        
+        # idk if there's a better way to do this
+        if selected_slot == 0:
+            selected_table_slot = (1,1)
+        elif selected_slot == 1:
+            selected_table_slot = (0,0)
+        elif selected_slot == 2:
+            selected_table_slot = (0,1)
+        elif selected_slot == 3:
+            selected_table_slot = (0,2)
+        elif selected_slot == 4:
+            selected_table_slot = (1,2)
+        elif selected_slot == 5:
+            selected_table_slot = (2,2)
+        elif selected_slot == 6:
+            selected_table_slot = (2,1)
+        elif selected_slot == 7:
+            selected_table_slot = (2,0)
+        elif selected_slot == 8:
+            selected_table_slot = (1,0)
 
-        if self.board[selected_row, selected_column] == 0:
-            self.board[selected_row, selected_column] = (1 if self.x_turn else 2)
+        if self.board[selected_table_slot] == 0:
+            self.board[selected_table_slot] = (1 if self.x_turn else 2)
         else:
             print("\n[!] Space already taken! Please choose again.")
             self.turn()
