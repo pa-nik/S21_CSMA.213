@@ -19,7 +19,7 @@ if input_string.lower() in encoder.classes_: # could be if input_string in color
     selected_color = input_string
 else:
     try:
-        selected_color = colors[int(input_string)]
+        selected_color = encoder.inverse_transform([int(input_string)])
     except:
         print("Error: invalid input.")
         exit(0)
