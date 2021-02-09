@@ -6,6 +6,7 @@ import random
 # Reference: https://en.wikipedia.org/wiki/Test_functions_for_optimization
 def calculate_booth(x, y):
     return math.pow(x + 2 * y - 7, 2) + math.pow(2 * x + y - 5, 2)
+    (x + 2 * y - 7)**2 + (2 * x + y - 5)**2
 
 
 # Particle Swarm Optimization (PSO)
