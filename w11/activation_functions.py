@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-#import seaborn; seaborn.set()
 from numpy import exp, array, append
 
 # Sigmoid activation function
